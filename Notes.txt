@@ -1,0 +1,74 @@
+Testing React Apps : Automated Testing
+
+Module Content: 
+
+What is Testing and why
+
+Understanding unit Tests
+
+Testing React Components & Building Blocks
+
+
+
+What is Testing : 
+
+Manual Testing -> Write code Preview and test in browser -> very important u see what user will see -> testing manually is error  prone : it's hard to test all possible combinations and scenarios
+
+
+
+Automated Testing : This is not replacement of manual testing , manual testing will always be super important but it's a addition with automated testing  u write extra code that runs and test ur code this is standard feature in modern development -> u test the individual building blocks of your app -> very technical but allows u to test all building blocks at once
+
+Different kinds of automated tests: 
+
+Unit Tests: all about  writing test  for smallest possible unit of ur application , Test the individual building block (function component) in isolation , Projects typically contains dozens or hundreds of unit tests and hence it is common important kind of test .But to verify that the overall application really works if u put together all the units we have integration 	tests
+Integration Test:   here we attached the combination of multiple building blocks  for ex multiple component working together and the  project typically contain a coupleof integration tests.Also important but focus on unit tests in most cases
+End-to-End (e2e) Tests : These are all about testing entire work flow in ur application , test complete scenarios in your app as the user would experience them. Project typically contain only a few e2e tests.Important but can also done manually (partially )
+
+
+What To Test 
+
+What
+
+Test the different building blocks 
+
+Unit Tests:  The smallest building blocks that make up your app 
+
+How 
+
+Test success and error cases, also test rare ( but possible ) results 
+
+
+
+Required Tool and Setup
+
+We need a tool for running our tests and asserting the results + we need a tool for 'simulating' (rendering) our react app /components
+
+
+
+Jest for asserting
+
+React Testing Library for simulating
+
+
+
+Both tools are already set for your when using create-react-app
+
+Like 
+
+
+
+ "@testing-library/jest-dom": "^5.11.6",
+
+    "@testing-library/react": "^11.2.2",
+
+    "@testing-library/user-event": "^12.5.0",
+
+
+
+Render function just render app component render funciton is imported from @testing-library/react 3rd party package
+
+ const linkElement = screen.getByText(/learn react/i); getbytext hold on some element on virtual screen or simulated browser into app is renderred learn react is a text
+
+and than if we check if LinkElement is exist in document.
+
+for running we run automated by npm test
